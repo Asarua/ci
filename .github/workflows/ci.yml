@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Console
-        run: console.log(123)
+        run: echo "123"
