@@ -1,0 +1,12 @@
+name: test
+
+on:
+  push:
+    branches: [master]
+
+jobs: 
+  console:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Console
+        run: console.log(123)
