@@ -10,3 +10,9 @@ jobs:
     steps:
       - name: Console
         run: echo "123"
+
+  console2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Console2
+        run: echo "321"
