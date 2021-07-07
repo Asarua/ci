@@ -1,18 +1,51 @@
-name: test
+name: CI
 
-on:
-  push:
-    branches: [master]
+on: [push, pull_request]
 
-jobs: 
-  console:
+jobs:
+  lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Console
-        run: echo "123"
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '14.x'
 
-  console2:
+    - name: Install dependencies
+      uses: bahmutov/npm-install@v1
+
+    - name: Run linter
+      run: npm run lint
+
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Console2
-        run: echo "321"
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '14.x'
+
+    - name: Install dependencies
+      uses: bahmutov/npm-install@v1
+
+    - name: Run test cases
+      run: npm test
+
+    # - name: Upload coverage to Codecov  
+    #   uses: codecov/codecov-action@v1
+    #   with:
+    #     token: ${{ secrets.CODECOV_TOKEN }}
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '14.x'
+
+    - name: Install dependencies
+      uses: bahmutov/npm-install@v1
+
+    - name: Build
+      run: npm run build

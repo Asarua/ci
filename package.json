@@ -1,0 +1,25 @@
+{
+  "name": "ci",
+  "version": "1.0.0",
+  "description": "测试github ci",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"this is test\"",
+    "build": "echo \"this is build\"",
+    "lint": "echo \"this is lint\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Asarua/ci.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Asarua/ci/issues"
+  },
+  "homepage": "https://github.com/Asarua/ci#readme",
+  "dependencies": {
+    "rkst": "^1.0.6"
+  }
+}
